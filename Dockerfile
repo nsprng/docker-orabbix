@@ -7,7 +7,7 @@ MAINTAINER nsprng
 #Install packages:
 RUN apk add --no-cache openjdk8 unzip
 
-#Copy orabbix distro:
+#Copy Orabbix distro:
 COPY orabbix-1.2.3.zip /
 
 #Install Orabbix and clean conf folder, because we gonna use custom configs:
