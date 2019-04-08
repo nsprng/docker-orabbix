@@ -1,0 +1,48 @@
+#Comma separated list of Zabbix servers:
+ZabbixServerList=ZabbixServer1
+
+#Address and port of each Zabbix server:
+ZabbixServer1.Address=zabbix.example
+ZabbixServer1.Port=10051
+
+#PID file:
+OrabbixDaemon.PidFile=./logs/orabbix.pid
+#Frequency of item's refresh:
+OrabbixDaemon.Sleep=300
+#MaxThreadNumber (should be >= than the number of your databases):
+OrabbixDaemon.MaxThreadNumber=100
+
+#Comma separated list of databases:
+DatabaseList=db-prod,db-dev
+
+#Configuration of Connection pool.
+#If not specified Orabbix is going to use default values (hardcoded).
+#Maximum number of active connection inside pool:
+DatabaseList.MaxActive=10
+#The maximum number of milliseconds that the pool will wait 
+#(when there are no available connections) for a connection to be returned 
+#before throwing an exception, or <= 0 to wait indefinitely:
+DatabaseList.MaxWait=100
+DatabaseList.MaxIdle=1
+
+#Define here your connection string for each database.
+#Connection string:
+db-prod.Url=jdbc:oracle:thin:@db-prod.example:1521:PROD
+db-dev.Url=jdbc:oracle:thin:@db-dev.example:1521:DEV
+#Database user (you must create it manually):
+db-prod.User=zabbix
+db-dev.User=zabbix
+#Database password:
+db-prod.Password=NotSecurePassword
+db-dev.Password=NotSecurePassword
+#Path to unique database config.
+#(if not specified Orabbix will use ./conf/query.props file):
+db-prod.QueryListFile=./conf/db-prod.props
+db-dev.QueryListFile=./conf/db-dev.props
+#Optional values (if not specified Orabbix will use the general values):
+#db-prod.MaxActive=10
+#db-prod.MaxWait=100
+#db-prod.MaxIdle=1
+#db-dev.MaxActive=10
+#db-dev.MaxWait=100
+#db-dev.MaxIdle=1
