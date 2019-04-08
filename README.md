@@ -24,7 +24,7 @@ DatabaseList.MaxActive=10
 DatabaseList.MaxWait=100
 DatabaseList.MaxIdle=1
 
-mydatabase.Url=jdbc:oracle:thin:@mydatabase.com:1521:MY_DB
+mydatabase.Url=jdbc:oracle:thin:@mydatabase.com:1521:MY_DB_SID
 mydatabase.User=zabbix
 mydatabase.Password=NotSecurePassword
 mydatabase.QueryListFile=./conf/mydatabase.props
