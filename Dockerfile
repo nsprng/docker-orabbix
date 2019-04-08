@@ -20,7 +20,7 @@ RUN mkdir -p /opt/orabbix && \
 #Create volume for custom configs:
 VOLUME /opt/orabbix/conf
 
-#Orabbix won't start if you run it from non-home directory:
+#Orabbix will not start if you run it from non-home directory:
 WORKDIR /opt/orabbix
 
 #Start Orabbix and send logs to foreground:
